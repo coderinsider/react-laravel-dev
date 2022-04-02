@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import Header from './components/Header';
+import HomeDashBoard from './components/HomeDashBoard';
+import LoginDashboard from './components/LoginDashboard';
+import AboutUsDashboard from './components/AboutUsDashboard';
+import Navigation from './components/Navigation';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+const App = () => {
+   return (
+      <Router>
+         <Header />
+         <Switch>
+            <Route exact path="/" component={HomeDashBoard}/>
+            <Route path="/login" component={LoginDashboard}/>
+            <Route path="/about-us" component={AboutUsDashboard}/>
+         </Switch>   
+      </Router>
+      
+   );
+}  
 export default App;

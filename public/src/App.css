@@ -1,3 +1,6 @@
+:root {
+  --color_one:  #052339;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +38,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#headerpanel {
+  background: var(--color_one);
+  padding: 10px 0;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  width: 40px;
+  height: 40px;
+}
+.header-logo img {
+  width: 100%;
+}
+.header-nav ul {
+  list-style: none;
+  display: flex;
+}
+.header-nav ul li :nth-child(1) {
+  margin-left: 0;
+}
+.header-nav ul li {
+  margin-left: 20px;
+}
+.header-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-right ul {
+  display: flex;
+  list-style: none;
+}
+.header-right ul li {
+    margin-left: 20px;
+}
+.header-right ul li a {
+  color: #fff;
+  text-decoration: none;
 }

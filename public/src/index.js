@@ -5,7 +5,6 @@ import { configureStore } from './store';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 ReactDOM.render(
   <Provider store={configureStore()}>
     <App />
