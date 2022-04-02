@@ -4,6 +4,7 @@ import LoginDashboard from './components/LoginDashboard';
 import AboutUsDashboard from './components/AboutUsDashboard';
 import Navigation from './components/Navigation';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
             <Route exact path="/" component={HomeDashBoard}/>
             <Route path="/login" component={LoginDashboard}/>
             <Route path="/about-us" component={AboutUsDashboard}/>
-         </Switch>   
+         </Switch>  
       </Router>
       
    );
