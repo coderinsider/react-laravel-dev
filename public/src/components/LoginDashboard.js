@@ -2,17 +2,18 @@ import '../style/login.css';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-const LoginDashboard = () => {
+import AboutUsDashboard from './AboutUsDashboard';
+const LoginDashboard = ({setToken}) => {
 
-	const [userName, setUserName] = useState();
+	const [email, setEmail] = useState();
 	const [userPassword, setPassword] = useState();
 
 
 	const history = useHistory();
 
 	const nameRequestAction = (evt) => {
-		const requestName = evt.target.value;
-		setUserName(requestName);
+		const email = evt.target.value;
+		setEmail(email);
 	}
 
 	const passwordRequestAction = (evt) => {
@@ -33,20 +34,27 @@ const LoginDashboard = () => {
 			};
 			const apiPath = 'http://127.0.0.1:8000/api/';
 			const loginRecord = {
-				email: userName,
+				email,
 				password: userPassword
 			}
 			axios.post(`${apiPath}login`, loginRecord, configHeaders)
 			.then((resp) => {
-				console.log(resp);
+				console.log(resp.data.data.token);
+				//sessionStorage.setItem('has_token', resp.data.data.token);
+				setToken(resp.data.data);
+
+				if(sessionStorage.has_token) {
+					return <AboutUsDashboard  />
+				}
 			})
 			.catch((error) => {
 				console.log(error);
 			});
 		evt.preventDefault();
-		console.log(userName);
+		console.log(email);
 		console.log(userPassword);
 	}
+
 	return (
 		<section id="logindash">
 			<div className="login-card">

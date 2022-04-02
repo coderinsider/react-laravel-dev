@@ -3,7 +3,7 @@ import {
    Link
 } from "react-router-dom";
 
-const Header = () => {
+const Header = ({token}) => {
 	return (
 		<header id="headerpanel">
 			<div className="container">
@@ -26,10 +26,19 @@ const Header = () => {
 					<div className="header-right">
 						<ul>
 							<li>
+								{
+								(!token) ? 
 								<Link to="/login">Login</Link>
+								:
+								null
+								}
 							</li>
 							<li>
+								{
+								(!token) ? 	
 								<Link to="/register">Register</Link>
+								:  null
+								}
 							</li>
 						</ul>
 					</div>
