@@ -20,3 +20,9 @@ php artisan migrate
 php artisan db:seed
 php artisan serve --port=8000
 ```
+For Frontend. You need to do something. Example
+```sh
+cd react-laravel-dev/public/
+npm install
+npm run start
+```
