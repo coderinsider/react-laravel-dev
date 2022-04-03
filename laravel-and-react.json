@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "35d7d6ce-d6b6-494a-9b51-44b19e58c073",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Completed Order Lists",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/codigo/order/record/index",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"codigo",
+						"order",
+						"record",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Post Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "maungmaung@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "maungmaung@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Post Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "myatkoko@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "myatkoko@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "David Aung Aung",
+							"type": "text"
+						},
+						{
+							"key": "c_password",
+							"value": "myatkoko@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Order Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "order_name",
+							"value": "maungmaung@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "total_credit",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pack_price",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "subtotal",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "gst",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "discount",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "grand_total",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "order_status",
+							"value": "COMPLETED",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/codigo/order/record",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"codigo",
+						"order",
+						"record"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find PromoCode",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "promo_code",
+						"value": "F2T0AHLJYY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "promo_code",
+							"value": "24CGXAB067",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/codigo/products/promote/findcode",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"codigo",
+						"products",
+						"promote",
+						"findcode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Promote. Code Lists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/codigo/products/promote/promolists",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"codigo",
+						"products",
+						"promote",
+						"promolists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Class Pack Lists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/codigo/products/records",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"codigo",
+						"products",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Class Pack Lists Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/codigo/products/records/d3caec5e-890c-3e38-9d75-4ca33f16eea8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"codigo",
+						"products",
+						"records",
+						"d3caec5e-890c-3e38-9d75-4ca33f16eea8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Completed Order FindBy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/codigo/order/record/findByOne/1163",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"codigo",
+						"order",
+						"record",
+						"findByOne",
+						"1163"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
