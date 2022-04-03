@@ -1,19 +1,23 @@
 import '../../style/packagedetail.css';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import  AboutUsDashboard from '../AboutUsDashboard';
 import axios from 'axios';
 const PackageDetail = ({token}) => {
+	const history = useHistory();
 	const [packdata, setPackData] = useState({});
 	const [promocode, setPromoCode] = useState(false);
 	const [requestCode, setRequestCode] = useState("");
 	const [promotecodeMessage, setPromoteMessage] = useState("");
 	const [promoteColor, setPromoteColor] = useState("");
+	const [subTotalData, setSubTotalData] = useState("");
 	console.log(requestCode);
 	useEffect(() => {
 		classPackList();
 		console.log(packdata);
 	}, []);
-	const classPackList = () => {
+
+	const httpHeaderConfig = () => {
 		const httpConfig = {
 			headers: {
 			'Accept':'application/json',
@@ -21,11 +25,13 @@ const PackageDetail = ({token}) => {
 			'Authorization': `Bearer ${token}`
 			}
 		}
+		return httpConfig;
+	}
+	const classPackList = () => {
 		const uuid = window.location.href.split("/")[5];
-		axios.get(`http://127.0.0.1:8000/api/codigo/products/records/${uuid}`, httpConfig)
+		axios.get(`http://127.0.0.1:8000/api/codigo/products/records/${uuid}`, httpHeaderConfig())
 		.then((resp) => {
-			setPackData(resp.data.data.pack_list[0]);
-			console.log(resp.data.data.pack_list[0]);
+			setPackData(resp.data.data.pack_list[0])
 		})
 		.catch((error) => {
 			console.log(error);
@@ -83,26 +89,47 @@ const PackageDetail = ({token}) => {
 		const dataRec = {
 			promo_code: requestCode
 		}
-		const httpConfig = {
-			headers: {
-			'Accept':'application/json',
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-			}
-		}
-		axios.post('http://127.0.0.1:8000/api/codigo/products/promote/findcode', dataRec, httpConfig)
+
+		axios.post('http://127.0.0.1:8000/api/codigo/products/promote/findcode', dataRec, httpHeaderConfig())
 		.then((resp) => {
 			if(resp.data.status) {
 				setPromoCode(true);
 				setPromoteMessage('Your promote code is success');
 				setPromoteColor('#00C3CF');
 			} else {
-				console.log("FFF");
 				setPromoteMessage('Your promote code is wrong');
 				setPromoteColor('red');
 			}
 			console.log(resp.data);
 
+		})
+		.catch((error) => {
+			console.log(error);
+		})
+	}
+	// Pay Now
+	const PayNowProcess = () => {
+		const saveRecords = {
+            'order_name': packdata.total_credit + " " + packdata.pack_name,
+            'product_id': packdata.id,
+            'total_credit': packdata.total_credit,
+            'pack_price': packdata.pack_price,
+            'subtotal': subTotal(packdata.pack_price),
+            'gst': gstPrice(packdata.pack_price),
+            'discount': discountPrice(packdata.pack_price),
+            'grand_total': GrandTotal(packdata.pack_price),
+            'order_status': 'COMPLETED',
+		}
+		console.log(saveRecords);
+
+		axios.post('http://127.0.0.1:8000/api/codigo/order/record', saveRecords, httpHeaderConfig())
+		.then((resp) => {
+			if(resp.data.status) {
+				//return window.location.href=`/profile/package/${packdata.pack_id}/completed`;		
+				history.push(`/profile/package/completed/${packdata.id}`);
+			} else {
+				console.log('Something wrong');
+			}
 		})
 		.catch((error) => {
 			console.log(error);
@@ -192,7 +219,7 @@ const PackageDetail = ({token}) => {
 						</div>
 					</div>
 					<div className="class-pack-footer-action">
-						<div class="term-codition">
+						<div className="term-codition">
 							<p>Please read all <Link to="/">Terms & Coditions</Link> before purchasing your YM Class or Class Pack</p>
 						</div>
 
@@ -201,7 +228,7 @@ const PackageDetail = ({token}) => {
 								<Link to="/profile/dashboard">Back</Link>
 							</div>
 							<div className="payment-right">
-								<button className="payment-button">Pay Now</button>
+								<button className="payment-button" onClick={PayNowProcess}>Pay Now</button>
 							</div>
 						</div>
 					</div>

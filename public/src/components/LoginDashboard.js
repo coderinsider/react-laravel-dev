@@ -21,35 +21,29 @@ const LoginDashboard = ({setToken}) => {
 		setPassword(requestPassword);
 	}
 	const requestAccountLogin = (evt) => {
-		// const httpConfig = {
-		// 	headers: {
-		// 		'Accept':'application/json',
-		// 		'Authorization': 'Bearer ' +'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNTZlMTQ1NjEzOTJhNTExNDYzNTg4ZmFiMTk3ZTQxMjVhY2FlZDJkZWU3NjgzMDMwY2ZkODI0ZDg0NDc1NTE1NmZkYzU5ODIxM2E3MWFmYzgiLCJpYXQiOjE2NDg4ODMyNjIuNDQzMjE0LCJuYmYiOjE2NDg4ODMyNjIuNDQzMjE1LCJleHAiOjE2ODA0MTkyNjIuNDQxNzk5LCJzdWIiOiI2MiIsInNjb3BlcyI6W119.pmuVe2qtbFWOWtFFrrNOFBQsDPWay1_wwzIeQ24oefNdR6H6cfz0d6-AkfHmBdzeRMf29QFue7HaWnsMsWrjMpsJ6Zf4E1BDakw5YySVlrgZ0QUVAPm5xPMPQumYZVtkip4F9DT4hJTLtXNIOXy2SbhD8iv2TcuI2fmRU7wowB5JP_4E415__oglsCz2TmIylnb_ESPvsZ65SCAH1gzBRgamHE1-s2KI4MUL2HiGVLP4zK8fL4Yf7jqAZ0jd8PNiGvgwAP4Pm_1N_15Szbfyvig6bsIjn6uFl6suH1sg6fE6NERqHl7d4w669MhCDoDU9x0KRK8JVLPidrLe8ePRp7SIUgQYX6eqKUJTmW-t4Iy0uxFFgflcHh8HnrSoqDaicnEqXnZGf7GyxaLdlz24SO9OAClVLDtWBPHblQyYDMXG4sNdhuGVUAr31SCluGhJam720oyLLgIG5MTgeP3YHp7q6gZ2S0qId52NqUg3Q7G7S5Zin0h5f4QHIJr_hn58dLS1R-zP3h1VG_5YIlppvYq5fwOijNRNfzsDGIK9xAIEvUz7x8Q6PJV9zAQDd87k-nQcdzn6SwB2OC6pDa7cd_MCNZ24AeRukj1OsMm0kGsrPpYlOWSZAzaVbynoVj8WgxuU0o3tcr9k3b7MyJlOcnzwuxUd0Fb0cO7t0wTf8-k',
-		// 	}
-		// }
-			const configHeaders = {
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			};
-			const apiPath = 'http://127.0.0.1:8000/api/';
-			const loginRecord = {
-				email,
-				password: userPassword
+		const configHeaders = {
+			headers: {
+				'Content-Type': 'application/json'
 			}
-			axios.post(`${apiPath}login`, loginRecord, configHeaders)
-			.then((resp) => {
-				console.log(resp.data.data.token);
-				//sessionStorage.setItem('has_token', resp.data.data.token);
-				setToken(resp.data.data);
+		};
+		const apiPath = 'http://127.0.0.1:8000/api/';
+		const loginRecord = {
+			email,
+			password: userPassword
+		}
+		axios.post(`${apiPath}login`, loginRecord, configHeaders)
+		.then((resp) => {
+			console.log(resp.data.data.token);
+			//sessionStorage.setItem('has_token', resp.data.data.token);
+			setToken(resp.data.data);
 
-				if(sessionStorage.has_token) {
-					return <AboutUsDashboard  />
-				}
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+			if(sessionStorage.has_token) {
+				return <AboutUsDashboard  />
+			}
+		})
+		.catch((error) => {
+			console.log(error);
+		});
 		evt.preventDefault();
 		console.log(email);
 		console.log(userPassword);

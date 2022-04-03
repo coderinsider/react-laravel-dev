@@ -30,14 +30,15 @@ const Header = ({token}) => {
 								(!token) ? 
 								<Link to="/login">Login</Link>
 								:
-								null
+								<Link to="/profile/dashboard">Dashboard</Link>
 								}
 							</li>
 							<li>
 								{
 								(!token) ? 	
 								<Link to="/register">Register</Link>
-								:  null
+								:  
+								<Link to="/logout">Logout</Link>
 								}
 							</li>
 						</ul>
