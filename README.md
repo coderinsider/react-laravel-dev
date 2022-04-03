@@ -18,6 +18,7 @@ cp .env.example .env
 php artisan key:generate
 php artisan migrate
 php artisan db:seed
+php artisan passport:install
 php artisan serve --port=8000
 ```
 For Frontend. You need to do something. Example
