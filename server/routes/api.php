@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\ProductListsController;
 use App\Http\Controllers\PromoCodeController;
+use App\Http\Controllers\OrderCompleteController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,4 +27,9 @@ Route::prefix('codigo')->middleware('auth:api')->group( function () {
     Route::get('products/promote/promolists', [PromoCodeController::class, 'findandRecord']);
     Route::get('products/records', [ProductListsController::class, 'index']);
     Route::get('products/records/{uuid}', [ProductListsController::class, 'findByEachOne']);
+
+    // Order Completed Record
+    Route::post('order/record', [OrderCompleteController::class, 'store']);
+    Route::get('order/record/index', [OrderCompleteController::class, 'index']);
+    Route::get('order/record/findByOne/{id}', [OrderCompleteController::class, 'findByOne']);
 });
