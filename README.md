@@ -8,7 +8,7 @@ Open your terminal. and then start run following commands.
 git clone https://github.com/coderinsider/react-laravel-dev.git
 ```
 
-Let create MySQL database name is "codigo_server"
+Let create MySQL database name is "databaseName"
 
 and then. Go to backend directory.
 ```sh
