@@ -9,5 +9,5 @@ class PromoCode extends Model
 {
     use HasFactory;
     protected $table = 'promo_codes';
-    protected $fillable = ['promo_codes'];
+    protected $fillable = ['promo_codes', 'is_available'];
 }
