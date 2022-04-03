@@ -9,7 +9,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import useToken from './useToken';
-
+import PackageDetail from './components/Private/PackageDetail';
 const App = () => {
    const {token, setToken} = useToken();
    console.log('This is a token');
@@ -37,6 +37,15 @@ const App = () => {
                {
                (token) ?
                <Dashboard token={token}/>
+               :
+               <Redirect to="/login" />
+               }
+            </Route>
+
+            <Route path="/profile/:id">
+               {
+               (token) ?
+               <PackageDetail token={token}/>
                :
                <Redirect to="/login" />
                }

@@ -22,6 +22,7 @@ class ProductListsController extends Controller
         $dataArray = [];
         foreach($findRecords as $each => $value) {
             $dataArray[$each] = [
+                "id" => $value->id,
                 "display_order" => $value->id,
                 "pack_id" => $value->pack_id,
                 "pack_name" => $value->pack_name,
@@ -52,7 +53,38 @@ class ProductListsController extends Controller
             ]
         ], 200);
     }
+    public function findByEachOne($uuid) {
+        $findRecords = $this->products->where('pack_id', $uuid)->get();
 
+        $dataArray = [];
+        foreach($findRecords as $each => $value) {
+            $dataArray[$each] = [
+                "id" => $value->id,
+                "display_order" => $value->id,
+                "pack_id" => $value->pack_id,
+                "pack_name" => $value->pack_name,
+                "pack_description" => $value->pack_description,
+                "pack_type" => $value->pack_type,
+                "total_credit" => $value->total_credit,
+                "tag_name" => $value->tag_name,
+                "validity_month" => $value->validity_month,
+                "pack_price" => $value->pack_price,
+                "newbie_first_attend" => $value->newbie_first_attend,
+                "newbie_addition_credit" => $value->newbie_addition_credit,
+                "newbie_note" => $value->newbie_note,
+                "pack_alias" => $value->pack_alias,
+                "estimate_price" => $value->estimate_price,
+            ];
+        }
+        return response([
+            'errorCode' => 0,
+            'message' => 'Route request success',
+            'status' => true, 
+            'data' => [
+                'pack_list'=> $dataArray
+            ]
+        ], 200);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\ProductListsController;
+use App\Http\Controllers\PromoCodeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,5 +22,8 @@ use App\Http\Controllers\ProductListsController;
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
 Route::prefix('codigo')->middleware('auth:api')->group( function () {
+    Route::post('products/promote/findcode', [PromoCodeController::class, 'findandIfExistsUpdate']);
+    Route::get('products/promote/promolists', [PromoCodeController::class, 'findandRecord']);
     Route::get('products/records', [ProductListsController::class, 'index']);
+    Route::get('products/records/{uuid}', [ProductListsController::class, 'findByEachOne']);
 });

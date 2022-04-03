@@ -9,11 +9,15 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300&family=Karla:wght@200&display=swap');
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+*  {
+  font-family: 'Cairo', sans-serif;
 }
 
 .App-header {

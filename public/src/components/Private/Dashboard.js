@@ -4,12 +4,7 @@ import React, { useState, useEffect} from 'react';
 import EachPackage from './EachPackage';
 import axios from 'axios';
 const Dashboard = ({token}) => {
-	const users = [
-		{name:'1'},
-		{name:'2'},
-		{name:'3'}
-	];
-	const [results, setResults] = useState(users);
+	const [results, setResults] = useState([]);
 	console.log('Working');
 	console.log(results);
 	const httpConfig = {

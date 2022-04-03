@@ -1,0 +1,148 @@
+#class-pack-main {
+	margin: 50px 0;
+}
+.class-pack-box {
+	border: 1px solid #ddd;
+	padding: 20px 0;
+	background: #ddd;
+}
+.inside-box-wrapper {
+	background: #fff;
+	padding: 20px 0;
+	border: 1px solid #00C3CF;
+}
+.inside-box-title, .class-box-body-wrapper {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.inside-box-title p {
+	font-weight: bold;
+	margin: 0;
+}
+.class-pack-head h3 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+}
+.class-pack-head, .inside-box-wrapper {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.countcircle p {
+	background: #052339;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	outline: 2px solid #052339;
+	border: 2px solid #ddd;
+}
+.class-box-body-wrapper {
+	padding: 30px 20px;
+	display: flex;
+	justify-content: space-between;
+}
+p {
+	margin: 0;
+}
+.classpack-show-content {
+	padding-left: 10px;
+}
+.promote-package-detail {
+	display: flex;
+	align-items: center;
+}
+.class-pack-show-name p {
+	color: #00C3CF;
+	font-weight: 600;
+	font-size: 1em;
+}
+.class-pack-show-desc p {
+	font-size: 0.8em;
+	color: #00c3cf9c;
+	font-weight: bold;
+}
+.class-pack-price p {
+	font-weight: bold;
+}
+.promode-apply {
+	margin-top: 20px;
+}
+.custom-promote {
+	background: #ddd;
+	border-radius: 0;
+	width: 250px;
+}
+.custome-promote-group {
+	display: flex;
+	position: relative;
+}
+.custom-promote:focus {
+	background: #ddd;
+}
+button.apply-button {
+	padding: 0 25px;
+	background: #00C3CF;
+	color: #fff;
+	border: transparent;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+.sub-total-wrapper {
+	border-top: 1px solid #ddd;
+}
+.sub-total-lists {
+	padding: 20px;
+}
+.bold-me {
+	font-weight: bold;
+}
+.subtotal-each {
+	display: flex;
+	justify-content: space-between;
+}
+.subtotal-name,.subtotal-value {
+	font-size: .8em;
+}
+.grand-color {
+	color: #00C3CF;
+}
+.status-success {
+	font-size: .9em;
+	font-weight: 600;
+/*	color: #;*/
+}
+.class-pack-footer-action {
+	padding: 20px;
+}
+.term-codition p {
+	margin: 0;
+	font-size: .8em;
+}
+.payment-action {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+.payment-right button {
+	border: 2px solid  #00C3CF;
+	background: #00C3CF;
+	color: #fff;
+	font-weight: 600;
+	font-size: .9em;
+	padding: 5px 26px;
+	border-radius: 40px;
+}
+.payment-left  a {
+	border: 2px solid  #00C3CF;
+	text-decoration: none;
+	color: #00C3CF;
+	font-weight: 600;
+	font-size: .9em;
+	padding: 2px 26px;
+	border-radius: 40px;	
+}
